@@ -12,7 +12,6 @@ const timerEl = document.querySelector('.timer');
 const fieldsEl = document.querySelectorAll('.field');
 timerEl.style.cssText = "color: red; display: flex; font-size: 20px; padding: 10px";
 for (const field of fieldsEl) {
-    console.log(field.style)
     field.style.display = 'flex';
     field.style.flexDirection = 'column';
     field.style.alignItems = 'center';
@@ -39,7 +38,6 @@ const options = {
         timerId = setInterval(() => {
             const today = new Date();
             const delta = chooseDate - today;
-            console.log(delta)
             if (delta < 1000) {
                 clearInterval(timerId)
             }
@@ -64,7 +62,6 @@ const options = {
     valueMinutes.textContent = minutes;
     const seconds = addLeadingZero(Math.floor((((ms % day) % hour) % minute) / second));
     valueSeconds.textContent = seconds;
-    console.log({ days, hours, minutes, seconds })
     return { days, hours, minutes, seconds };
   }
 

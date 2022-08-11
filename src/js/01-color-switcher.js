@@ -1,6 +1,7 @@
 const btnStartEl = document.querySelector('[data-start]')
 const btnStoptEl = document.querySelector('[data-stop]')
 const bodyEl = document.querySelector('body')
+let timerId = null;
 
 btnStoptEl.setAttribute('disabled', true);
 

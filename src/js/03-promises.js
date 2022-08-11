@@ -55,5 +55,4 @@ function createPromise(position, delay) {
   });
 }
 
-
 button.addEventListener('click', handleSubmit)

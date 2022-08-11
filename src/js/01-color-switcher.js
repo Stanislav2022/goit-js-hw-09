@@ -6,7 +6,7 @@ let timerId = null;
 btnStoptEl.setAttribute('disabled', true);
 
 btnStartEl.addEventListener('click', () => {
-      timerId = setInterval(() => {
+  timerId = setInterval(() => {
       bodyEl.style.background = getRandomHexColor();
       }, 1000);
       btnStartEl.setAttribute('disabled', true);

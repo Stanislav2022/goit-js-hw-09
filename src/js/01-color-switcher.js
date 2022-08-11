@@ -5,9 +5,9 @@ const bodyEl = document.querySelector('body')
 btnStoptEl.setAttribute('disabled', true);
 
 btnStartEl.addEventListener('click', () => {
+  btnStartEl.setAttribute('disabled', true);
+  btnStoptEl.removeAttribute('disabled')
     timerId = setInterval(() => {
-      btnStartEl.setAttribute('disabled', true);
-      btnStoptEl.removeAttribute('disabled')
         bodyEl.style.background = getRandomHexColor();
       }, 1000);
 
@@ -17,7 +17,6 @@ btnStoptEl.addEventListener("click", () => {
     btnStartEl.removeAttribute('disabled')
     btnStoptEl.setAttribute('disabled', true);
     clearInterval(timerId);
-
      });
 
 

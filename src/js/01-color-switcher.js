@@ -5,12 +5,11 @@ const bodyEl = document.querySelector('body')
 btnStoptEl.setAttribute('disabled', true);
 
 btnStartEl.addEventListener('click', () => {
-  btnStartEl.setAttribute('disabled', true);
-  btnStoptEl.removeAttribute('disabled')
     timerId = setInterval(() => {
         bodyEl.style.background = getRandomHexColor();
       }, 1000);
-
+    btnStartEl.setAttribute('disabled', true);
+    btnStoptEl.removeAttribute('disabled')
 })
 
 btnStoptEl.addEventListener("click", () => {

@@ -17,7 +17,7 @@ for (const field of fieldsEl) {
     field.style.alignItems = 'center';
     field.style.padding = "15px"
 }
-
+let timerId = null;
 btn.setAttribute('disabled', true);
 const today = new Date()
 const delta = 0;

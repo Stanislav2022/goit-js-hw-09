@@ -42,8 +42,7 @@ const options = {
             btn.setAttribute('disabled', true);
             if (delta < 1000) {
                 clearInterval(timerId)
-                delta = 0
-            }
+              }
             convertMs(delta)
         }, 1000);
       });

@@ -29,7 +29,7 @@ const options = {
     minuteIncrement: 1,
     onClose(selectedDates) {
       const chooseDate = selectedDates[0]
-       if(chooseDate < today || delta < 0 ) {
+       if(chooseDate < today) {
         Notify.failure('Please choose a date in the future');
         btn.setAttribute('disabled', true);
         return
@@ -43,10 +43,12 @@ const options = {
             if (delta < 1000) {
                 clearInterval(timerId)
                 delta = 0;
+                return
               }
             convertMs(delta)
-        }, 1000);
+           }, 1000);
       });
+      
     },
    };
   flatpickr("#datetime-picker", options);

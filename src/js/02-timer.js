@@ -19,8 +19,8 @@ for (const field of fieldsEl) {
 }
 let timerId = null;
 btn.setAttribute('disabled', true);
-const today = new Date()
-const delta = 0;
+let today = new Date()
+let delta = 0;
 
 const options = {
     enableTime: true,
@@ -37,11 +37,12 @@ const options = {
       btn.removeAttribute('disabled')
       btn.addEventListener('click', () => {
         timerId = setInterval(() => {
-            const today = new Date();
-            const delta = chooseDate - today;
+            let today = new Date();
+            let delta = chooseDate - today;
             btn.setAttribute('disabled', true);
             if (delta < 1000) {
                 clearInterval(timerId)
+                delta = 0
             }
             convertMs(delta)
         }, 1000);

@@ -31,6 +31,7 @@ const options = {
       const chooseDate = selectedDates[0]
        if(chooseDate < today) {
         Notify.failure('Please choose a date in the future');
+        btn.setAttribute('disabled', true);
         return
       }
       btn.removeAttribute('disabled')
@@ -38,6 +39,7 @@ const options = {
         timerId = setInterval(() => {
             const today = new Date();
             const delta = chooseDate - today;
+            btn.setAttribute('disabled', true);
             if (delta < 1000) {
                 clearInterval(timerId)
             }

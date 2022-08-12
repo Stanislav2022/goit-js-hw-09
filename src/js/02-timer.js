@@ -29,7 +29,7 @@ const options = {
     minuteIncrement: 1,
     onClose(selectedDates) {
       const chooseDate = selectedDates[0]
-       if(chooseDate < today) {
+       if(chooseDate < today || delta < 1000 ) {
         Notify.failure('Please choose a date in the future');
         btn.setAttribute('disabled', true);
         return
@@ -42,6 +42,7 @@ const options = {
             btn.setAttribute('disabled', true);
             if (delta < 1000) {
                 clearInterval(timerId)
+                delta = 0;
               }
             convertMs(delta)
         }, 1000);

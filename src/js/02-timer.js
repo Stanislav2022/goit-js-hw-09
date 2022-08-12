@@ -40,7 +40,7 @@ const options = {
             let today = new Date();
             let delta = chooseDate - today;
             btn.setAttribute('disabled', true);
-            if (delta < 1000) {
+            if (delta <= 0) {
                 clearInterval(timerId)
                 delta = 0;
                 return
